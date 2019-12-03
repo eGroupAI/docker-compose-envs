@@ -11,3 +11,8 @@ $ docker volume create --name dynamodata
 ```sh
 $ docker-compose up
 ```
+
+If you want to run process in background.
+```sh
+$ docker-compose up -d
+```
