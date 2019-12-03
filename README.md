@@ -7,7 +7,7 @@ Quick Start
 $ docker volume create --name dynamodata
 ```
 
-1. Use docker compose to start.
+2. Use docker compose to start.
 ```sh
-$ docker-compose up -d
+$ docker-compose up
 ```
