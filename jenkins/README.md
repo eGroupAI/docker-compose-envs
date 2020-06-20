@@ -20,3 +20,19 @@ $ cd jenkins && docker-compose up -d
 ```sh
 $ docker logs containerId
 ```
+4. docker rebuild
+
+```sh
+$ sudo docker-compose build
+```
+5. docker shutdown
+
+```sh
+$ docker-compose down
+```
+6. update jenkins version
+
+```sh
+$ sudo docker pull jenkins/jenkins:lts
+```
+ 
