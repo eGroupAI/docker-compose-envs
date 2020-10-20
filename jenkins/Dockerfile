@@ -13,17 +13,10 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN ./aws/install
 RUN aws --version
-# install awsebcli(and it will automately install python 3.7)
-# https://github.com/aws/aws-elastic-beanstalk-cli-setup
-RUN apt-get install -y \
-    build-essential zlib1g-dev libssl-dev libncurses-dev \
-    libffi-dev libsqlite3-dev libreadline-dev libbz2-dev
-RUN git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
-RUN ./aws-elastic-beanstalk-cli-setup/scripts/bundled_installer
-ENV PATH=/root/.ebcli-virtual-env/executables:$PATH
-ENV PATH=/root/.pyenv/versions/3.7.2/bin:$PATH
+# install awsebcli and it need python3
+RUN apt-get install -y python3 python3-pip
+RUN pip3 install awsebcli
 RUN eb --version
-RUN python --version
 # install docker
 # https://docs.docker.com/engine/install/ubuntu/
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
